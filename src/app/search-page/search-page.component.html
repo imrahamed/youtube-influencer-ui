@@ -19,7 +19,9 @@
   <mat-toolbar-row>
   </mat-toolbar-row>
 </mat-toolbar>
-
+<div>
+    <button (click)='export()' class="export"  mat-raised-button color="warn">Export</button>
+</div>
 <div class="video" >
   <div *ngFor="let video of videos | search : query" class="card">
   <mat-card>

@@ -12,6 +12,10 @@
     line-height: 4;
 }
 
+.export {
+    margin: 0 2.7%;
+    float: right;
+}
 
 .video {
     display: -webkit-inline-box;

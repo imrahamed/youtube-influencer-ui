@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatBottomSheetRef, MatBottomSheet } from '@angular/material';
 import * as _ from 'lodash';
+import { Angular5Csv } from 'angular5-csv/Angular5-csv';
 @Component({
   selector: 'app-search-page',
   templateUrl: './search-page.component.html',
@@ -87,7 +88,8 @@ export class SearchPageComponent implements OnInit {
       subscriber: 15000
     }
   ]
-  constructor(public dialog: MatDialog, private bottomSheet: MatBottomSheet) { }
+  constructor(public dialog: MatDialog,
+     private bottomSheet: MatBottomSheet) { }
 
   ngOnInit() {
     this.api_value = this.videos
@@ -125,6 +127,11 @@ export class SearchPageComponent implements OnInit {
       const sort = localStorage.getItem('sort');
       this.videos = _.orderBy(this.videos, this.sorting[sort].key, this.sorting[sort].order)
     });
+  }
+
+  export(): void {
+    new Angular5Csv(this.api_value, 'videos' ,{noDownload: false});
+    // new Angular2Csv(this.api_value, 'My Report');
   }
 }
 
