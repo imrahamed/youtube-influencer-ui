@@ -1,0 +1,43 @@
+<mat-toolbar color="secondary">
+  <div fxLayout="row">
+    <div class="text-center-title" fxHide.lt-sm="true" fxFlex.md="30" fxFlex.md.gt="33">
+      Search Youtubers
+    </div>
+    <div class="text-center" [ngStyle.xs]="{'width.%': 100, 'margin-left.%': 5, 
+        'margin-right.%': 5}" fxFlex.sm="33%" fxFlex.xs="100" fxFlex.md="33" fxFlex.md.gt="33">
+      <mat-form-field class="example-full-width">
+        <input type="text" [(ngModel)]="query" matInput placeholder="search term">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="text-center" [ngStyle.xs]="{'width.%': 100, 'margin-left.%': 5, 'margin-right.%': 5, 'text-align': 'center'}"
+      fxFlex.md="33" fxFlex.md.gt="33">
+      <button (click)='openSort()' style="margin-right: 2%;" mat-raised-button color="primary">Sort</button>
+      <button (click)='openFilter()' mat-raised-button color="accent">Filter</button>
+    </div>
+  </div>
+  <mat-toolbar-row>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="video" >
+  <div *ngFor="let video of videos | search : query" class="card">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{video.name}}</mat-card-title>
+      <mat-card-subtitle>{{video.channel}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{video.image}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+          {{video.desc}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+  </div>
+</div>

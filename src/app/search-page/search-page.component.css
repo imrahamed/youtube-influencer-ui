@@ -1,0 +1,56 @@
+.mat-toolbar-row {
+    height: auto;
+}
+
+.text-center {
+    text-align: center;
+    line-height: 3;
+}
+
+.text-center-title {
+    text-align: center;
+    line-height: 4;
+}
+
+
+.video {
+    display: -webkit-inline-box;
+    margin: 0 1%;
+}
+.video .card {
+    width: 31%;
+    display: -webkit-inline-box;
+    margin: 1%;
+}
+
+.video .mat-card-image {
+    height: 254px;
+}
+
+.video .card p {
+    height: 96px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 2000px) { 
+    .video .card {
+        width: 31%
+    }
+    .video .mat-card-image {
+            height: 254px;
+    }
+
+ }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+    .video .card {
+        width: 48%
+    }
+ }
+@media (max-width: 480px) { 
+    .video .card {
+        width: 100%
+    }
+ }

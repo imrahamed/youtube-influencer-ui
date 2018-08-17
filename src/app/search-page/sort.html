@@ -1,0 +1,26 @@
+<mat-nav-list>
+        <a  mat-list-item (click)="sort($event, 1)">
+          <span mat-line>By Name</span>
+          <span mat-line>A - Z</span>
+        </a>
+      
+        <a  mat-list-item (click)="sort($event, 2)">
+          <span mat-line>By Name</span>
+          <span mat-line>Z - A</span>
+        </a>
+      
+        <a  mat-list-item (click)="sort($event, 3)">
+          <span mat-line>By Subscribers</span>
+          <span mat-line>Low to high</span>
+        </a>
+      
+        <a  mat-list-item (click)="sort($event, 4)">
+          <span mat-line>By Subscribers</span>
+          <span mat-line>High to Low</span>
+        </a>
+      </mat-nav-list>
+      
+      
+      <!-- Copyright 2018 Google Inc. All Rights Reserved.
+          Use of this source code is governed by an MIT-style license that
+          can be found in the LICENSE file at http://angular.io/license -->

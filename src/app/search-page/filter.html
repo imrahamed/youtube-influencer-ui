@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Hi {{data.name}}</h1>
+<div mat-dialog-content>
+        <mat-form-field>
+                <mat-select [(ngModel)]='filter.country' placeholder="Country">
+                  <mat-option *ngFor="let country of countries" [value]="country">
+                    {{country}}
+                  </mat-option>
+                </mat-select>
+        </mat-form-field>
+        <div>
+                <p>Subscribers {{filter.subscriber}}</p>
+                <mat-slider [(ngModel)]='filter.subscriber'
+                step="1000" min="0"
+                max="100000"></mat-slider>
+        </div>
+        <mat-form-field>
+                <mat-select [(ngModel)]='filter.channel' placeholder="Channel">
+                  <mat-option *ngFor="let channel of channels" [value]="channel">
+                    {{channel}}
+                  </mat-option>
+                </mat-select>
+        </mat-form-field>
+       
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Clear</button>
+  <button mat-button [mat-dialog-close]="filter" cdkFocusInitial>Apply</button>
+</div>
